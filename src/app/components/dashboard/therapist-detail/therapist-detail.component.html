@@ -1,0 +1,89 @@
+
+<div class="wrapper">
+  <div class="left">
+      <img src="../../../assets/blueuser.png"
+      alt="user" width="100">
+      <h4>Ime i prezime</h4>
+       <p>Therapist</p>
+  </div>
+  <div class="right">
+      <div class="info">
+          <h3>Information</h3>
+          <div class="info_data">
+               <div class="data">
+                  <h4>Email</h4>
+                  <p>emailemail@gmail.com</p>
+               </div>
+               <div class="data">
+                 <h4>Phone number</h4>
+                  <p>+381 64 123 123 12</p>
+            </div>
+          </div>
+      </div>
+
+    <div class="projects">
+          <h3>Available therapies</h3>
+          <div class="projects_data">
+            <div class = 'data'>
+              <ul>
+                  <li>Kinesioterapija</li>
+                  <li>Kiropraktika</li>
+                  <li>Fizioterapija</li>
+                  <li>Fizioterapija</li>
+                  <li>Fizioterapija</li>
+                  <li>Fizioterapija</li>
+                  <!-- <li></li>
+                  <li></li> -->
+              </ul>
+            </div>
+               <!-- <div class="data">
+                  <h4>Recent</h4>
+                  <p>Lorem ipsum dolor sit amet.</p>
+               </div> -->
+               <div class="data">
+                 <h4>Most Viewed</h4>
+                  <p>dolor sit amet.</p>
+            </div>
+          </div>
+      </div>
+
+      <div class="social_media">
+        <button class='btn btn-primary btn-designed' routerLink='/create-reservation'>Add reservation</button>
+        <button class='btn btn-primary' (click)='showCommentsMethod()'>Comments</button>
+          <!-- <ul>
+             <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul> -->
+    </div>
+
+    <div class="panel-body" *ngIf='showComments'>
+
+
+      <div class="clearfix"></div>
+      <hr>
+      <ul class="media-list">
+        <li class="media" *ngFor='let komentar of comments'>
+          <app-comment [comment]='komentar'></app-comment>
+        </li>
+      </ul>
+
+      <div class="clearfix"></div>
+
+
+      <form #formData="ngForm" (ngSubmit)="saveComment(formData)">
+        <!-- <div>
+          Mark:<rating [(ngModel)]="rate" [max]="max"></rating>
+        </div> -->
+
+      <textarea ngModel name='komentar' class="form-control textbox" placeholder="Enter your comment..." rows="3"></textarea>
+      <br>
+      <rating class='rating' [(ngModel)]="rate" [max]="max"></rating>
+      <button type="submit" class="btn btn-info pull-right" style='padding: 10px;'>Send</button>
+    </form>
+    </div>
+  </div>
+
+
+</div>
+

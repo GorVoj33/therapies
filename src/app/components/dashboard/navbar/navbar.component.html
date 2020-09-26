@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <img src="/assets/FizioLogo.png"  width="70px" style="display: flex; justify-content: center;margin: auto;" alt="" class="">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topheader" aria-controls="topheader"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse nav-font" id="topheader">
+      <ul class="navbar-nav mr-auto ml-3">
+  
+        <li class="nav-item" id="navItem1" [ngClass]="{'active': activeTab === 'navItem1'}">
+          <a class="nav-link" [routerLink]="['/dashboard/create-reservation']" (click)="changeActiveTab1($event)">Add reservation</a>
+        </li>
+        <li class="nav-item" id="navItem2" [ngClass]="{'active': activeTab === 'navItem2'}">
+          <a class="nav-link" [routerLink]="['/dashboard/addArrangement']" (click)="changeActiveTab2($event)">Change information</a>
+        </li>
+        <li class="nav-item" id="navItem1" [ngClass]="{'active': activeTab === 'navItem3'}">
+          <a class="nav-link" [routerLink]="['/dashboard/therapist']" (click)="changeActiveTab3($event)">View and rate therapist</a>
+        </li>
+        <li class="nav-item" id="navItem1" [ngClass]="{'active': activeTab === 'navItem4'}">
+          <a class="nav-link" [routerLink]="['/dashboard/addArrangement']" (click)="changeActiveTab4($event)">Reservations</a>
+        </li>
+      </ul>
+  
+      <div class="row" style="margin-right: 2px">
+        <p style="margin-top:15px">Trenutno ulogovani korisnik</p>
+      </div>
+      <img src="/assets/userBrkic.jpg" style="border-radius: 50%; margin-left: 7px;margin-right: 10px;" width="50px" alt="">
+      <a href="#" class="btn btn-outline-primary">Log out</a>
+  
+    </div>
+  </nav>
+  
+  
+  
+  
+  

@@ -1,0 +1,32 @@
+
+<div class="container">
+    <div class="card">
+      <table class="table table-striped">
+        <thead style="background-color:#72AEC6;color: white;">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">id</th>
+            <th scope="col">Korisnik</th>
+            <th scope="col">Naziv aranzmana</th>
+            <th scope="col">Broj turista</th>
+  
+          </tr>
+        </thead>
+        <tbody>
+          <tr  *ngFor="let reservation of reservationsArray; let i = index">
+            <th scope="row">{{i+1}}</th>
+            <th scope="row" >{{reservation.aranzman_id}}</th>
+            <td scope="row">{{reservation.korisnicko_ime}}</td>
+            <td scope="row">{{reservation.naziv_aranzmana}}</td>
+            <td scope="row">{{reservation.broj_turista}}</td>
+        
+            <!-- <td scope="row"><a href="#" class="btn login_btn" (click)="openUpdateArrangementModal()">Izmeni aranzman</a></td>
+            <td scope="row"> <a href="#" class="btn login_btn">Rezervisi</a></td> -->
+  
+  
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

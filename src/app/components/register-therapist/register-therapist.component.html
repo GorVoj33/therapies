@@ -1,0 +1,87 @@
+<div class="container">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+				<h3>Sign Up</h3>
+				<!-- <div class="d-flex justify-content-end social_icon">
+					<span><i class="fab fa-facebook-square"></i></span>
+					<span><i class="fab fa-google-plus-square"></i></span>
+					<span><i class="fab fa-twitter-square"></i></span>
+				</div> -->
+			</div>
+			<div class="card-body">
+				<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input type="text" class="form-control" placeholder="name" formControlName="name">
+
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input type="text" class="form-control" placeholder="lastname" formControlName="lastname">
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-envelope"></i></span>
+						</div>
+						<input type="text" class="form-control" placeholder="email" formControlName="email">
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-phone"></i></span>
+						</div>
+						<input type="text" class="form-control" placeholder="phone number"
+							formControlName="phoneNumber">
+          </div>
+          <div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input type="text" class="form-control" placeholder="description"
+							formControlName="description">
+					</div>
+
+					<div class="form-group">
+						<input type="submit" value="Register" class="btn float-right login_btn">
+          </div>
+          <div class='checkbox-therapies'> Select therapies you do
+            <p *ngIf='noSelectedTherapiesError' class='error'>You need to select at least one therapy!</p>
+            <div *ngFor = 'let therapy of therapies'>
+              <input type='checkbox' name='{{therapy.id}}' [value]='therapy.name' (change)='selectTherapy($event, therapy.id)'>
+              {{therapy.name}}
+            </div>
+          </div>
+
+
+          <div class="alert alert-info" id='info-box' *ngIf='responseArrived'>
+            <strong>Info!</strong> {{infoMessage}}
+          </div>
+          <!-- <section class="example-section">
+            <span class="example-list-section">
+              <mat-checkbox class="example-margin"
+                            [checked]="allComplete"
+                            [indeterminate]="someComplete()"
+                            (change)="setAll($event.checked)">
+                {{task.name}}
+              </mat-checkbox>
+            </span>
+            <span class="example-list-section">
+              <ul>
+                <li *ngFor="let subtask of task.subtasks">
+                  <mat-checkbox [(ngModel)]="subtask.completed"
+                                (ngModelChange)="updateAllComplete()">
+                    {{subtask.name}}
+                  </mat-checkbox>
+                </li>
+              </ul>
+            </span>
+          </section> -->
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
